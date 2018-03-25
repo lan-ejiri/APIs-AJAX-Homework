@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     //initial array of Reactions
-    var reactions = ["yes", "no", "maybe", "happy", "sad", "angry", "concerned", "shrug", "blush","dance","sleepy"];
+    var reactions = ["yes", "no", "maybe", "happy", "sad", "angry", "concerned", "shrug", "blush", "dance", "sleepy"];
 
     //actually shows the GIFS in the DOM
     function displayGIFs() {
@@ -26,7 +26,7 @@ $(document).ready(function () {
 
                 //new div for rating and gif included
                 var ratingandgif = $("<div class='rateandgif'>");
-
+                console.log(response);
                 //gettin the infos from the GET 
                 var imageUrl = response.data[i].images.fixed_height.url;
                 var stillUrl = response.data[i].images.fixed_height_still.url;
@@ -36,6 +36,7 @@ $(document).ready(function () {
                 var gifDiv = $("<img>");
                 //p tag for the rating
                 var p = $("<p>").text("Rating: " + results[i].rating);
+                var q = $("<p>").text("Title: " + results[i].title);
 
                 //add some attributes
                 gifDiv.attr('src', stillUrl);
@@ -44,9 +45,22 @@ $(document).ready(function () {
                 gifDiv.attr('state', "still");
                 gifDiv.addClass("gif");
 
-                //put the rating and the gif in the div
-                ratingandgif.append(p);
+                //put the title and rating and the gif in the div
                 ratingandgif.append(gifDiv);
+
+                ratingandgif.append(q);
+
+
+                //i think giphy isnt letting me download?
+                //i get these errors 
+                //200.gif?cid=e1bb72ff5ab7f935757a6a6d36ec2890:86 GET https://secure.quantserve.com/quant.js net::ERR_BLOCKED_BY_CLIENT
+                // (anonymous) @ 200.gif?cid=e1bb72ff5ab7f935757a6a6d36ec2890:86
+                // (anonymous) @ 200.gif?cid=e1bb72ff5ab7f935757a6a6d36ec2890:87
+                // 200.gif?cid=e1bb72ff5ab7f935757a6a6d36ec2890:103 GET https://d31qbv1cthcecs.cloudfront.net/atrk.js net::ERR_BLOCKED_BY_CLIENT
+                ratingandgif.append("<a href=" + imageUrl + " download=" + response.data[i].title + "><button class='button download'>Download</button></a>");
+
+                ratingandgif.append(p);
+
 
                 //put the div in the other div, wow my comments suck
                 $("#gifsgohere").append(ratingandgif);
@@ -109,7 +123,6 @@ $(document).ready(function () {
 
     //listening for clicks on class .gif
     $(document).on("click", ".gif", toggleGif);
-
 
     //display initial buttons with this
     displayButtons();
