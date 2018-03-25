@@ -1,4 +1,56 @@
+body{
+    background-color: lightgrey;
+}
+
+#buttonsgohere,form {
+    margin-top: 20px;
+}
+
+.gif {
+    margin: 5px;
+    border: 2px solid black;
+}
+.gif:hover {
+    border: 2px solid red;
+}
+
 .rateandgif {
     float: left;
     margin: 10px;
+}
+
+.button,#add-reaction{
+    margin: 5px;
+    background-color: green;
+    border-radius: 15px;
+    border: 2px green outset;
+    padding: 3px 10px 3px 10px;
+    color: white;
+    font-weight: bold;
+}
+
+#add-reaction{
+    margin-top: 10px;
+}
+.button:hover {
+    background-color: grey;
+    padding: 5px 13px 5px 13px;
+    border: 2px grey outset;
+}
+
+.button:active {
+    background-color: grey;
+    padding: 5px 13px 5px 13px;
+    border: 2px grey inset;
+}
+
+#add-reaction:hover {
+    background-color: grey;
+    padding: 5px 13px 5px 13px;
+    border: 2px grey outset;
+}
+#add-reaction:active {
+    background-color: grey;
+    padding: 5px 13px 5px 13px;
+    border: 2px grey inset;
 }
