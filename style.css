@@ -1,13 +1,14 @@
 body{
-    background-color: lightgrey;
+    background-color: rgb(223, 237, 255);
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .gif {
-    margin: 15px;
-    border: 2px solid black;
+    margin: 10px;
+    border: 1px solid rgb(77, 28, 0);
 }
 .gif:hover {
-    border: 2px solid red;
+    border: 1px solid orange;
 }
 
 .rateandgif {
@@ -17,34 +18,34 @@ body{
 
 .button,#add-reaction{
     margin: 5px;
-    background-color: green;
-    border-radius: 15px;
-    border: 2px green outset;
+    background-color: beige;
+    border: 1px rgb(77, 28, 0);
     padding: 3px 10px 3px 10px;
-    color: white;
+    color: rgb(77, 28, 0);
     font-weight: bold;
 }
 
 #add-reaction{
     margin-top: 10px;
 }
+
 .button:hover {
     background-color: grey;
-    border: 2px grey outset;
+    /* border: 1px grey; */
 }
 
 .button:active {
     background-color: grey;
-    border: 2px grey inset;
+    /* border: 1px grey inset; */
 }
 
 #add-reaction:hover {
     background-color: grey;
-    border: 2px grey outset;
+    /* border: 1px grey outset; */
 }
 #add-reaction:active {
     background-color: grey;
-    border: 2px grey inset;
+    /* border: 1px grey inset; */
 }
 
 p,.download {
