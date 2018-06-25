@@ -3,6 +3,7 @@ body{
 	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
+
 .gif {
     margin: 10px;
     border: 1px solid rgb(77, 28, 0);
@@ -12,10 +13,16 @@ body{
 }
 
 .rateandgif {
-    float: left;
-    margin: 10px;
+    float:  left;
+    margin: 5px;
+    border: solid white 1px;
+    background-color: white;
 }
-
+/* .rateandgif .button {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+} */
 .button,#add-reaction{
     margin: 5px;
     background-color: beige;
@@ -55,4 +62,9 @@ p,.download {
 p {
     font-weight: bold;
     text-align: center;
+}
+
+.navg{
+    background-color: rgb(147, 194, 255);
+    width: 100%;
 }

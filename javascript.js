@@ -50,7 +50,7 @@ $(document).ready(function() {
         //p tag for the rating
         var p = $("<p>").text("Rating: " + results[i].rating);
         var q = $("<p>").text("Title: " + results[i].title);
-
+        var dl = results[i].images.original.url;
         //add some attributes
         gifDiv.attr("src", stillUrl);
         gifDiv.attr("animatedUrl", imageUrl);
@@ -61,21 +61,7 @@ $(document).ready(function() {
         //put the title and rating and the gif in the div
         ratingandgif.append(gifDiv);
 
-        ratingandgif.append(q);
-
-        //i think giphy isnt letting me download?
-        //i get these errors
-        //200.gif?cid=e1bb72ff5ab7f935757a6a6d36ec2890:86 GET https://secure.quantserve.com/quant.js net::ERR_BLOCKED_BY_CLIENT
-        // (anonymous) @ 200.gif?cid=e1bb72ff5ab7f935757a6a6d36ec2890:86
-        // (anonymous) @ 200.gif?cid=e1bb72ff5ab7f935757a6a6d36ec2890:87
-        // 200.gif?cid=e1bb72ff5ab7f935757a6a6d36ec2890:103 GET https://d31qbv1cthcecs.cloudfront.net/atrk.js net::ERR_BLOCKED_BY_CLIENT
-        ratingandgif.append(
-          "<a href=" +
-            imageUrl +
-            " download=" +
-            response.data[i].title +
-            "><button class='button download'>Download</button></a>"
-        );
+        ratingandgif.append(q);;
 
         ratingandgif.append(p);
 
